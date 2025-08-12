@@ -34,26 +34,7 @@ public class Client extends JFrame implements ActionListener {
             }
         });
 
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/2.png"));
-        Image i5 = i4.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT);
-        JLabel profile = new JLabel(new ImageIcon(i5));
-        profile.setBounds(40, 10, 50, 50);
-        p1.add(profile);
-
-        
-        ImageIcon i7 = new ImageIcon(ClassLoader.getSystemResource("icons/video.png"));
-        Image i8 = i7.getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT);
-        JLabel video = new JLabel(new ImageIcon(i8));
-        video.setBounds(300, 20, 30, 30);
-        p1.add(video);
-
-        
-        video.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                JOptionPane.showMessageDialog(Client.this, 
-                    "Calling feature will be updated soon till then enjoy");
-            }
-        });
+      
 
        
         ImageIcon i10 = new ImageIcon(ClassLoader.getSystemResource("icons/phone.png"));
