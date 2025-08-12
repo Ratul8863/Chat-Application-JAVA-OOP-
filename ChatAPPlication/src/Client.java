@@ -5,19 +5,18 @@ import java.util.Calendar;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class Server extends JFrame implements ActionListener {
+public class Client extends JFrame implements ActionListener {
     JTextField text;
     JPanel a1;
     static Box vertical = Box.createVerticalBox();
-    JLabel name;
+    JLabel name; 
 
-    Server() {
+    Client() {
         setLayout(null);
 
         JPanel p1 = new JPanel();
         p1.setBackground(new Color(7, 94, 84));
         p1.setBounds(0, 0, 450, 70);
-      
         p1.setLayout(null);
         add(p1);
         
@@ -35,7 +34,7 @@ public class Server extends JFrame implements ActionListener {
             }
         });
 
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/1.png"));
+        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/2.png"));
         Image i5 = i4.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT);
         JLabel profile = new JLabel(new ImageIcon(i5));
         profile.setBounds(40, 10, 50, 50);
@@ -48,10 +47,10 @@ public class Server extends JFrame implements ActionListener {
         video.setBounds(300, 20, 30, 30);
         p1.add(video);
 
-       
+        
         video.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
-                JOptionPane.showMessageDialog(Server.this, 
+                JOptionPane.showMessageDialog(Client.this, 
                     "Calling feature will be updated soon till then enjoy");
             }
         });
@@ -63,29 +62,30 @@ public class Server extends JFrame implements ActionListener {
         phone.setBounds(360, 20, 30, 30);
         p1.add(phone);
 
-      
+       
         phone.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
-                JOptionPane.showMessageDialog(Server.this, 
-                    "Calling feature will be updated soon till then enjoy");
+                JOptionPane.showMessageDialog(Client.this, 
+                    "Calling feature will be available soon till then enjoy");
             }
         });
 
-       
+      
         ImageIcon i13 = new ImageIcon(ClassLoader.getSystemResource("icons/3icon.png"));
         Image i14 = i13.getImage().getScaledInstance(10, 25, Image.SCALE_DEFAULT);
         JLabel morevert = new JLabel(new ImageIcon(i14));
         morevert.setBounds(420, 20, 10, 25);
         p1.add(morevert);
 
-      
+        
+        // 3 dot icon er kaj 
         morevert.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 JPopupMenu menu = new JPopupMenu();
 
                 JMenuItem editProfile = new JMenuItem("Edit Profile");
                 editProfile.addActionListener(ae -> {
-                    String newName = JOptionPane.showInputDialog(Server.this, "Enter new name:");
+                    String newName = JOptionPane.showInputDialog(Client.this, "Enter new name:");
                     if (newName != null && !newName.trim().isEmpty()) {
                         name.setText(newName.trim());
                     }
@@ -93,7 +93,7 @@ public class Server extends JFrame implements ActionListener {
 
                 JMenuItem updateItem = new JMenuItem("Update");
                 updateItem.addActionListener(ae -> {
-                    JOptionPane.showMessageDialog(Server.this, "Up to date");
+                    JOptionPane.showMessageDialog(Client.this, "Up to date");
                 });
 
                 menu.add(editProfile);
@@ -102,8 +102,8 @@ public class Server extends JFrame implements ActionListener {
             }
         });
 
-        
-        name = new JLabel("Ratul");
+        // eikhane name er kaj 
+        name = new JLabel("Nila");
         name.setBounds(110, 15, 200, 18);
         name.setForeground(Color.WHITE);
         name.setFont(new Font("SAN SERIF", Font.BOLD, 18));
@@ -133,7 +133,7 @@ public class Server extends JFrame implements ActionListener {
         add(send);
 
         setSize(450, 700);
-        setLocation(20, 50);
+        setLocation(600, 50);
         setUndecorated(true);
         getContentPane().setBackground(Color.WHITE);
         setVisible(true);
@@ -172,6 +172,6 @@ public class Server extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new Server();
+        new Client();
     }
 }
